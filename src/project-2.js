@@ -3,6 +3,7 @@
 const getBiggest = (x, y) => {
   // x and y are integers.  Return the larger integer
   // if they are the same return either one
+  return x > y ? x : y;
 };
 
 const greeting = (language) => {
@@ -11,15 +12,35 @@ const greeting = (language) => {
   // language: 'Spanish' -> 'Hola!'
   // language: 'Chinese' -> 'Ni Hao!'
   // if language is undefined return 'Hello!'
+  switch (language) {
+    case 'German':
+      return 'Guten Tag!';
+    case 'Spanish':
+      return 'Hola!';
+    case 'Chinese':
+      return 'Ni Hao!';
+    default:
+      return 'Hello!';
+  }
 };
 
 const isTenOrFive = (num) => {
   // return true if num is 10 or 5
   // otherwise return false
+  if (num === 10 || num === 5) {
+    return true;
+  }
+
+  return false;
 };
 
 const isInRange = (num) => {
   // return true if num is less than 50 and greater than 20
+  if (num < 50 && num > 20) {
+    return true;
+  }
+
+  return false;
 };
 
 const isInteger = (num) => {
@@ -29,6 +50,11 @@ const isInteger = (num) => {
   // -10 -> true
   // otherwise return false
   // hint: you can solve this using Math.floor
+  if (num === Math.floor(num)) {
+    return true;
+  }
+
+  return false;
 };
 
 const fizzBuzz = (num) => {

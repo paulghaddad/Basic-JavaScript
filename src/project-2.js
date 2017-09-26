@@ -1,10 +1,8 @@
 // Do not change any of the function names
 
-const getBiggest = (x, y) => {
-  // x and y are integers.  Return the larger integer
-  // if they are the same return either one
-  return x > y ? x : y;
-};
+// x and y are integers.  Return the larger integer
+// if they are the same return either one
+const getBiggest = (x, y) => (x > y ? x : y);
 
 const greeting = (language) => {
   // return a greeting for three different languages:
@@ -24,24 +22,12 @@ const greeting = (language) => {
   }
 };
 
-const isTenOrFive = (num) => {
-  // return true if num is 10 or 5
-  // otherwise return false
-  if (num === 10 || num === 5) {
-    return true;
-  }
+// return true if num is 10 or 5
+// otherwise return false
+const isTenOrFive = num => (num === 10 || num === 5);
 
-  return false;
-};
-
-const isInRange = (num) => {
-  // return true if num is less than 50 and greater than 20
-  if (num < 50 && num > 20) {
-    return true;
-  }
-
-  return false;
-};
+// return true if num is less than 50 and greater than 20
+const isInRange = num => (num < 50 && num > 20);
 
 const isInteger = (num) => {
   // return true if num is an integer
@@ -95,77 +81,43 @@ const isPrime = (num) => {
   return true;
 };
 
-const returnFirst = (arr) => {
-  // return the first item from the array
-  return arr.shift();
-};
+// return the first item from the array
+const returnFirst = arr => arr[0];
 
-const returnLast = (arr) => {
-  // return the last item of the array
-  return arr.pop();
-};
+// return the last item of the array
+const returnLast = arr => arr[arr.length - 1];
 
-const getArrayLength = (arr) => {
-  // return the length of the array
-  return arr.length;
-};
+// return the length of the array
+const getArrayLength = arr => arr.length;
 
-const incrementByOne = (arr) => {
-  // arr is an array of integers
-  // increase each integer by one
-  // return the array
-  const incrementedArray = arr.map(element => element += 1);
+const incrementByOne = arr => arr.map(element => element + 1);
 
-  return incrementedArray;
-};
+// add the item to the end of the array
+// return the array
+const addItemToArray = (arr, item) => [...arr, item];
 
-const addItemToArray = (arr, item) => {
-  // add the item to the end of the array
-  // return the array
-  arr.push(item);
+// add the item to the front of the array
+// return the array
+// hint: use the array method .unshift
+const addItemToFront = (arr, item) => [item, ...arr];
 
-  return arr;
-};
+// words is an array of strings
+// return a string that is all of the words concatenated together
+// spaces need to be between each word
+// example: ['Hello', 'world!'] -> 'Hello world!'
+const wordsToSentence = words => words.join(' ');
 
-const addItemToFront = (arr, item) => {
-  // add the item to the front of the array
-  // return the array
-  // hint: use the array method .unshift
-  arr.unshift(item);
+// check to see if item is inside of arr
+// return true if it is, otherwise return false
+const contains = (arr, item) => arr.includes(item);
 
-  return arr;
-};
+// numbers is an array of integers.
+// add all of the integers and return the value
+const addNumbers = numbers => numbers.reduce((sum, num) => sum + num);
 
-const wordsToSentence = (words) => {
-  // words is an array of strings
-  // return a string that is all of the words concatenated together
-  // spaces need to be between each word
-  // example: ['Hello', 'world!'] -> 'Hello world!'
-
-  return words.join(' ');
-};
-
-const contains = (arr, item) => {
-  // check to see if item is inside of arr
-  // return true if it is, otherwise return false
-  const elementPresent = arr.indexOf(item);
-
-  return elementPresent >= 0;
-};
-
-const addNumbers = (numbers) => {
-  // numbers is an array of integers.
-  // add all of the integers and return the value
-  return numbers.reduce((sum, num) => sum + num);
-};
-
-const averageTestScore = (testScores) => {
-  // testScores is an array.  Iterate over testScores and compute the average.
-  // return the average
-  const sum = testScores.reduce((memo, num) => memo + num);
-
-  return sum / testScores.length;
-};
+// testScores is an array.  Iterate over testScores and compute the average.
+// return the average
+const averageTestScore = testScores => addNumbers(testScores) / testScores.length;
 
 const largestNumber = (numbers) => {
   // numbers is an array of integers
